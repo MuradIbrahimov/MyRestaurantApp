@@ -6,11 +6,11 @@ import android.widget.Button;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-public class MainActivity extends AppCompatActivity {
+public class IntroActivity extends AppCompatActivity {
 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_intro);
 
         // Find the "Sahibkar" button (button2) in the MainActivity layout
         Button sahibkarButton = findViewById(R.id.signInBtn);
@@ -18,7 +18,7 @@ public class MainActivity extends AppCompatActivity {
         // Set an OnClickListener for the button
         sahibkarButton.setOnClickListener(view -> {
             // Start the LoginActivity when the button is clicked
-            Intent intent = new Intent(MainActivity.this, LoginActivity.class);
+            Intent intent = new Intent(IntroActivity.this, LoginActivity.class);
             startActivity(intent);
         });
     }
