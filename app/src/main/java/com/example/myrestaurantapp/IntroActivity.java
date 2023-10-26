@@ -10,7 +10,7 @@ public class IntroActivity extends AppCompatActivity {
 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_intro);
 
         // Find the "Sahibkar" button (button2) in the MainActivity layout
         Button sahibkarButton = findViewById(R.id.signInBtn);
