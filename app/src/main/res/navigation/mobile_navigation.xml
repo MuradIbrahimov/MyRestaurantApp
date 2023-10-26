@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@+id/nav_mc_donalds">
+
+    <fragment
+        android:id="@+id/nav_mc_donalds"
+        android:name="com.example.myrestaurantapp.ui.home.HomeFragment"
+        android:label="@string/mc_donalds"
+        tools:layout="@layout/fragment_mcdonalds" />
+
+    <fragment
+        android:id="@+id/nav_kfc"
+        android:name="com.example.myrestaurantapp.ui.gallery.GalleryFragment"
+        android:label="@string/kfc"
+        tools:layout="@layout/fragment_kfc" />
+
+    <fragment
+        android:id="@+id/nav_papajohns"
+        android:name="com.example.myrestaurantapp.ui.slideshow.SlideshowFragment"
+        android:label="@string/menu_slideshow"
+        tools:layout="@layout/fragment_papajohns" />
+</navigation>
