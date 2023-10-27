@@ -5,21 +5,27 @@
     android:id="@+id/mobile_navigation"
     app:startDestination="@+id/nav_mc_donalds">
 
+
     <fragment
         android:id="@+id/nav_mc_donalds"
-        android:name="com.example.myrestaurantapp.ui.home.HomeFragment"
+        android:name="com.example.myrestaurantapp.ui.mcDonalds.McDonaldsFragment"
         android:label="@string/mc_donalds"
         tools:layout="@layout/fragment_mcdonalds" />
 
     <fragment
         android:id="@+id/nav_kfc"
-        android:name="com.example.myrestaurantapp.ui.gallery.GalleryFragment"
+        android:name="com.example.myrestaurantapp.ui.kfc.KfcFragment"
         android:label="@string/kfc"
         tools:layout="@layout/fragment_kfc" />
 
     <fragment
         android:id="@+id/nav_papajohns"
-        android:name="com.example.myrestaurantapp.ui.slideshow.SlideshowFragment"
-        android:label="@string/menu_slideshow"
+        android:name="com.example.myrestaurantapp.ui.papaJohns.PapaJonhsFragment"
+        android:label="@string/papajohns"
         tools:layout="@layout/fragment_papajohns" />
+    <fragment
+        android:id="@+id/nav_profile"
+        android:name="com.example.myrestaurantapp.ui.profile.ProfileFragment"
+        android:label="@string/profile"
+        tools:layout="@layout/fragment_profile" />
 </navigation>

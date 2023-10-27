@@ -13,5 +13,19 @@
     <string name="menu_slideshow">Slideshow</string>
     <string name="mc_donalds">Mc Donalds</string>
     <string name="kfc">KFC</string>
-    <string name="papajohns">Papa John</string>
+    <string name="papajohns">Papa Johns</string>
+    <string name="guest">Qonaq</string>
+    <string name="guest_message">Yeməkdən zövq al!</string>
+    <string name="reyting">Reyting\n</string>
+    <string name="kateqoriyalar">Kategoriyalar</string>
+    <string name="search">Searh for food</string>
+    <string name="mevcud_konum">Konum\n</string>
+    <string name="baki_azerbaijan">Baki,Azerbaijan</string>
+    <string name="mc_donalds_welcome">Mc Donaldsa Xoş Gəlmisiniz!</string>
+    <string name="most_fauvorites">Ən bəyənilənlər</string>
+    <string name="more">Ətraflı</string>
+    <string name="todo">TODO</string>
+    <string name="Perfect">Əla</string>
+    <string name="Time">10 min</string>
+    <string name="profile">Profile</string>
 </resources>

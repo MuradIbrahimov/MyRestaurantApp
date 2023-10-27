@@ -11,14 +11,19 @@ public class IntroActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_intro);
-
         // Find the "Sahibkar" button (button2) in the MainActivity layout
         Button sahibkarButton = findViewById(R.id.signInBtn);
-
+        Button guestButton = findViewById(R.id.buttonGuest);
         // Set an OnClickListener for the button
         sahibkarButton.setOnClickListener(view -> {
             // Start the LoginActivity when the button is clicked
             Intent intent = new Intent(IntroActivity.this, LoginActivity.class);
+            startActivity(intent);
+        });
+
+        guestButton.setOnClickListener(view -> {
+            // Start the LoginActivity when the button is clicked
+            Intent intent = new Intent(IntroActivity.this, MainPage.class);
             startActivity(intent);
         });
     }
