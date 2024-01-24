@@ -106,4 +106,5 @@ private  RecyclerView recyclerViewCategory, recyclerViewPopularList;
     }
 
 
+
 }
