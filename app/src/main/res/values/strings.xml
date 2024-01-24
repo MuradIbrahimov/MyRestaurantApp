@@ -21,7 +21,7 @@
     <string name="search">Searh for food</string>
     <string name="mevcud_konum">Konum\n</string>
     <string name="baki_azerbaijan">Baki,Azerbaijan</string>
-    <string name="mc_donalds_welcome">Mc Donaldsa Xoş Gəlmisiniz!</string>
+    <string name="welcome">Xoş Gəlmisiniz!</string>
     <string name="most_fauvorites">Ən bəyənilənlər</string>
     <string name="more">Ətraflı</string>
     <string name="todo">TODO</string>
@@ -29,4 +29,6 @@
     <string name="Time">10 min</string>
     <string name="profile">Profile</string>
     <string name="forget_pass">Şifrəni unutdun?</string>
+<!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>

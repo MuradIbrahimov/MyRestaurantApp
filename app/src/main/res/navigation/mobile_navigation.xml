@@ -17,12 +17,6 @@
         android:name="com.example.myrestaurantapp.ui.kfc.KfcFragment"
         android:label="@string/kfc"
         tools:layout="@layout/fragment_kfc" />
-
-    <fragment
-        android:id="@+id/nav_papajohns"
-        android:name="com.example.myrestaurantapp.ui.papaJohns.PapaJonhsFragment"
-        android:label="@string/papajohns"
-        tools:layout="@layout/fragment_papajohns" />
     <fragment
         android:id="@+id/nav_profile"
         android:name="com.example.myrestaurantapp.ui.profile.ProfileFragment"
