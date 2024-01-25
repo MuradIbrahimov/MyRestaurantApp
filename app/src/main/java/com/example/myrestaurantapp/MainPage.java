@@ -48,7 +48,7 @@ private  RecyclerView recyclerViewCategory, recyclerViewPopularList;
         // Passing each menu ID as a set of Ids because each
         // menu should be considered as top level destinations.
         mAppBarConfiguration = new AppBarConfiguration.Builder(
-                R.id.nav_mc_donalds, R.id.nav_kfc, R.id.nav_papajohns)
+                R.id.nav_mc_donalds, R.id.nav_kfc)
                 .setOpenableLayout(drawer)
                 .build();
         NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment_content_main_page);

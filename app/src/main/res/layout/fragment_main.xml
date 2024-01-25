@@ -79,8 +79,8 @@
                     android:layout_marginEnd="6dp"
                     android:background="@drawable/grey_background"
                     android:padding="12dp"
-                    android:src="@tools:sample/avatars"
-                    app:srcCompat="@drawable/settings" />
+                    android:src="@drawable/settings"
+                    />
 
                 <LinearLayout
                     android:layout_width="wrap_content"
@@ -112,8 +112,7 @@
                         android:layout_gravity="center"
                         android:layout_weight="1"
                         android:padding="4dp"
-                        android:src="@tools:sample/avatars"
-                        app:srcCompat="@drawable/search_icon" />
+                        android:src="@drawable/search_icon" />
                 </LinearLayout>
 
                 <ImageView
@@ -123,8 +122,7 @@
                     android:layout_marginStart="6dp"
                     android:background="@drawable/grey_background"
                     android:padding="12dp"
-                    android:src="@tools:sample/avatars"
-                    app:srcCompat="@drawable/basket" />
+                    android:src="@drawable/basket" />
             </LinearLayout>
 
             <LinearLayout

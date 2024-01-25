@@ -13,10 +13,6 @@
             android:icon="@drawable/kfc_logo"
             android:title="@string/kfc" />
         <item
-            android:id="@+id/nav_papajohns"
-            android:icon="@drawable/papa_johns_logo"
-            android:title="@string/papajohns" />
-        <item
             android:id="@+id/nav_profile"
             android:icon="@drawable/profile_icon"
             android:title="@string/profile" />

@@ -13,7 +13,7 @@
         android:layout_alignParentStart="true"
         android:layout_alignParentEnd="true"
         android:layout_marginTop="68dp"
-        android:text="Xoş Gəldiniz"
+        android:text="@string/welcome"
         android:textColor="#ffffff"
         android:textSize="48dp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -47,7 +47,7 @@
             android:layout_marginEnd="32dp"
             android:layout_marginBottom="8dp"
             android:background="@drawable/button_intro_2"
-            android:text="Müştəri"
+            android:text="@string/guest"
             android:textColor="#f2a82b"
             android:textSize="24sp"
             android:textStyle="bold" />
@@ -62,7 +62,7 @@
             android:layout_marginEnd="32dp"
             android:layout_marginBottom="8dp"
             android:background="@drawable/button_intro"
-            android:text="Sahibkar"
+            android:text="@string/restaurant"
             android:textColor="#ffffff"
             android:textSize="24sp"
             android:textStyle="bold" />

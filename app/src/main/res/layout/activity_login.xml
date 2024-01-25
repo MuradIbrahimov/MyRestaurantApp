@@ -39,7 +39,7 @@
         tools:layout_editor_absoluteX="0dp">
 
         <EditText
-            android:id="@+id/editTextPerson3"
+            android:id="@+id/emailInput"
             android:layout_width="match_parent"
             android:layout_height="50dp"
             android:layout_marginStart="32dp"
@@ -54,7 +54,7 @@
             android:paddingStart="20dp" />
 
         <EditText
-            android:id="@+id/pass"
+            android:id="@+id/passwordInput"
             android:layout_width="match_parent"
             android:layout_height="50dp"
             android:layout_marginStart="32dp"
