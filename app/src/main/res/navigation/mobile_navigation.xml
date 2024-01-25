@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/mobile_navigation"
-    app:startDestination="@+id/nav_mc_donalds">
+    app:startDestination="@+id/nav_main_page">
 
 
     <fragment
@@ -22,4 +22,9 @@
         android:name="com.example.myrestaurantapp.ui.profile.ProfileFragment"
         android:label="@string/profile"
         tools:layout="@layout/fragment_profile" />
+    <fragment
+        android:id="@+id/nav_main_page"
+        android:name="com.example.myrestaurantapp.ui.main.MainPageFragment"
+        android:label="@string/main_page"
+        tools:layout="@layout/fragment_main" />
 </navigation>

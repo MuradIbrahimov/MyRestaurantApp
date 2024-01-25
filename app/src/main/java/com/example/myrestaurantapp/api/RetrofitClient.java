@@ -13,7 +13,7 @@ public class RetrofitClient {
             OkHttpClient client = new OkHttpClient.Builder().build();
 
             retrofit = new Retrofit.Builder()
-                    .baseUrl("http://192.168.1.66:8090/")  // Fix the colon here
+                    .baseUrl("http://192.168.1.81:8090/")  // Fix the colon here
                     .addConverterFactory(GsonConverterFactory.create())
                     .client(client)
                     .build();

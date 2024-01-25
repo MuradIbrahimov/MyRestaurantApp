@@ -1,30 +1,27 @@
 package com.example.myrestaurantapp.domain;
 
 public class Location {
-private int Id;
-private String Loc;
+    private String id;
+    private String loc;
 
-    @Override
-    public String toString() {
-        return Loc ;
+    public String getId() {
+        return id;
     }
 
-    public int getId() {
-        return Id;
-    }
-
-    public void setId(int id) {
-        Id = id;
+    public void setId(String id) {
+        this.id = id;
     }
 
     public String getLoc() {
-        return Loc;
+        return loc;
     }
 
     public void setLoc(String loc) {
-        Loc = loc;
+        this.loc = loc;
     }
 
-    public Location() {
+    @Override
+    public String toString() {
+        return loc;
     }
 }

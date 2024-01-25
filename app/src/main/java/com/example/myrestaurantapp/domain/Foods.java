@@ -1,47 +1,42 @@
 package com.example.myrestaurantapp.domain;
 
 public class Foods {
-    private  int CategoryId;
-    private String Description;
-    private boolean BestFood;
+    private  int categoryId;
+    private String description;
+    private boolean bestFood;
     private int Id;
-    private int LocationId;
-    private double Price;
-    private String ImagePath;
-    private int PriceId;
-    private double Star;
-    private int TimeId;
-    private int TimeValue;
-    private String Title;
+    private int locationId;
+    private double price;
+    private String imagePath;
+    private int priceId;
+    private double star;
+    private int timeId;
+    private int timeValue;
+    private String title;
     private int numberInCart;
 
-    @Override
-    public String toString() {
-        return Title;
-    }
-
     public int getCategoryId() {
-        return CategoryId;
+        return categoryId;
     }
 
     public void setCategoryId(int categoryId) {
-        CategoryId = categoryId;
+        this.categoryId = categoryId;
     }
 
     public String getDescription() {
-        return Description;
+        return description;
     }
 
     public void setDescription(String description) {
-        Description = description;
+        this.description = description;
     }
 
     public boolean isBestFood() {
-        return BestFood;
+        return bestFood;
     }
 
     public void setBestFood(boolean bestFood) {
-        BestFood = bestFood;
+        this.bestFood = bestFood;
     }
 
     public int getId() {
@@ -49,71 +44,76 @@ public class Foods {
     }
 
     public void setId(int id) {
-        Id = id;
+        this.Id = id;
     }
 
     public int getLocationId() {
-        return LocationId;
+        return locationId;
     }
 
     public void setLocationId(int locationId) {
-        LocationId = locationId;
+        this.locationId = locationId;
     }
 
     public double getPrice() {
-        return Price;
+        return price;
     }
 
     public void setPrice(double price) {
-        Price = price;
+        this.price = price;
     }
 
     public String getImagePath() {
-        return ImagePath;
+        return imagePath;
     }
 
     public void setImagePath(String imagePath) {
-        ImagePath = imagePath;
+        this.imagePath = imagePath;
     }
 
     public int getPriceId() {
-        return PriceId;
+        return priceId;
     }
 
     public void setPriceId(int priceId) {
-        PriceId = priceId;
+        this.priceId = priceId;
     }
 
     public double getStar() {
-        return Star;
+        return star;
     }
 
     public void setStar(double star) {
-        Star = star;
+        this.star = star;
     }
 
     public int getTimeId() {
-        return TimeId;
+        return timeId;
     }
 
     public void setTimeId(int timeId) {
-        TimeId = timeId;
+        this.timeId = timeId;
     }
 
     public int getTimeValue() {
-        return TimeValue;
+        return timeValue;
     }
 
     public void setTimeValue(int timeValue) {
-        TimeValue = timeValue;
+        this.timeValue = timeValue;
     }
 
     public String getTitle() {
-        return Title;
+        return title;
     }
 
     public void setTitle(String title) {
-        Title = title;
+        this.title = title;
+    }
+
+    @Override
+    public String toString() {
+        return  title;
     }
 
     public int getNumberInCart() {

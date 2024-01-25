@@ -34,7 +34,6 @@ public class CategoryAdapter extends RecyclerView.Adapter<CategoryAdapter.ViewHo
     @SuppressLint("DiscouragedApi")
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
-        holder.categoryName.setText(categories.get(position).getTitle());
         String picUrl = "";
         switch (position){
             case 0:{
