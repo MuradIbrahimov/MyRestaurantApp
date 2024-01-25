@@ -12,16 +12,16 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
 import com.example.myrestaurantapp.R;
-import com.example.myrestaurantapp.domain.CategoryDomain;
+import com.example.myrestaurantapp.domain.Category;
 
 import java.util.ArrayList;
 
 public class CategoryAdapter extends RecyclerView.Adapter<CategoryAdapter.ViewHolder> {
 
-    ArrayList<CategoryDomain> categoryDomains;
+    ArrayList<Category> categories;
 
-    public CategoryAdapter(ArrayList<CategoryDomain> categoryDomains) {
-        this.categoryDomains = categoryDomains;
+    public CategoryAdapter(ArrayList<Category> categories) {
+        this.categories = categories;
     }
 
     @NonNull
@@ -34,7 +34,7 @@ public class CategoryAdapter extends RecyclerView.Adapter<CategoryAdapter.ViewHo
     @SuppressLint("DiscouragedApi")
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
-        holder.categoryName.setText(categoryDomains.get(position).getTitle());
+        holder.categoryName.setText(categories.get(position).getTitle());
         String picUrl = "";
         switch (position){
             case 0:{
@@ -63,7 +63,7 @@ public class CategoryAdapter extends RecyclerView.Adapter<CategoryAdapter.ViewHo
 
     @Override
     public int getItemCount() {
-        return categoryDomains.size();
+        return categories.size();
     }
  public static class ViewHolder extends RecyclerView.ViewHolder{
 TextView categoryName;

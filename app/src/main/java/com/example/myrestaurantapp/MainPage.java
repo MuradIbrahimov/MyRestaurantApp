@@ -16,7 +16,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.example.myrestaurantapp.adapter.CategoryAdapter;
 import com.example.myrestaurantapp.adapter.MostFauvoriteAdapter;
 import com.example.myrestaurantapp.databinding.ActivityMainPageBinding;
-import com.example.myrestaurantapp.domain.CategoryDomain;
+import com.example.myrestaurantapp.domain.Category;
 import com.example.myrestaurantapp.domain.FauvoritesDomain;
 import com.google.android.material.navigation.NavigationView;
 import com.google.android.material.snackbar.Snackbar;
@@ -80,11 +80,11 @@ private  RecyclerView recyclerViewCategory, recyclerViewPopularList;
        recyclerViewCategory = findViewById(R.id.recyclerCategory);
        recyclerViewCategory.setLayoutManager(linearLayoutManager);
 
-       ArrayList<CategoryDomain> categoryList = new ArrayList<>();
-        categoryList.add(new CategoryDomain("Pizza", "cat_1"));
-        categoryList.add(new CategoryDomain("Burger", "cat_2"));
-        categoryList.add(new CategoryDomain("Chicken", "cat_3"));
-        categoryList.add(new CategoryDomain("Hotdog", "cat_4"));
+       ArrayList<Category> categoryList = new ArrayList<>();
+        categoryList.add(new Category("Pizza", "cat_1"));
+        categoryList.add(new Category("Burger", "cat_2"));
+        categoryList.add(new Category("Chicken", "cat_3"));
+        categoryList.add(new Category("Hotdog", "cat_4"));
 
         adapter = new CategoryAdapter(categoryList);
         recyclerViewCategory.setAdapter(adapter);
