@@ -1,7 +1,10 @@
 package com.example.myrestaurantapp.api;
 
+import com.example.myrestaurantapp.domain.Category;
 import com.example.myrestaurantapp.domain.Foods;
 import com.example.myrestaurantapp.domain.Location;
+import com.example.myrestaurantapp.domain.Price;
+import com.example.myrestaurantapp.domain.Time;
 import com.example.myrestaurantapp.entity.User;
 
 import java.util.List;
@@ -25,5 +28,14 @@ public interface ApiInterface {
     Call<List<Foods>> getBestFoods();
     @GET("api/locations")
     Call<List<Location>> getLocations();
+
+    @GET("api/times")
+    Call<List<Time>> getTime();
+    @GET("api/prices")
+    Call<List<Price>> getPrice();
+
+    @GET("api/categories")
+    Call<List<Category>> getCategories();
+
 
 }

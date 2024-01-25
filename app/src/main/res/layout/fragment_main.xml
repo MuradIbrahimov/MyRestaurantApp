@@ -8,55 +8,13 @@
     android:orientation="vertical">
 
 
-    <RelativeLayout
-        android:id="@+id/topLayout"
-        android:layout_width="wrap_content"
-        android:layout_height="68dp"
-        android:paddingLeft="15dp"
-        android:paddingTop="15dp"
-        android:paddingRight="15dp"
-        android:paddingBottom="0dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
-
-
-        <RelativeLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_centerVertical="true">
-
-
-            <TextView
-                android:id="@+id/localeName"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_centerVertical="true"
-                android:layout_marginTop="20dp"
-
-                android:hint="@string/welcome"
-                android:textSize="15sp" />
-
-        </RelativeLayout>
-
-
-        <ImageView
-            android:layout_width="40dp"
-            android:layout_height="40dp"
-            android:layout_alignParentRight="true"
-            android:layout_centerVertical="true"
-            android:padding="2dp"
-            android:src="@drawable/mcdonald_logo" />
-
-    </RelativeLayout>
-
     <ScrollView
         android:id="@+id/scrollView2"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/topLayout">
+        app:layout_constraintTop_toTopOf="parent">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -79,8 +37,7 @@
                     android:layout_marginEnd="6dp"
                     android:background="@drawable/grey_background"
                     android:padding="12dp"
-                    android:src="@drawable/settings"
-                    />
+                    android:src="@drawable/settings" />
 
                 <LinearLayout
                     android:layout_width="wrap_content"
@@ -229,11 +186,10 @@
                 <androidx.recyclerview.widget.RecyclerView
                     android:id="@+id/recyclerCategory"
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_marginTop="16dp"
+                    android:layout_height="wrap_content"
                     android:clipToPadding="false"
                     android:paddingStart="8dp"
-                    android:paddingEnd="24dp"
+                    android:paddingEnd="8dp"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/textView5"

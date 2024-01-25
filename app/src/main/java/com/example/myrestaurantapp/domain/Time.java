@@ -1,23 +1,23 @@
 package com.example.myrestaurantapp.domain;
 
 public class Time {
-    private int Id;
-    private String Value;
+    private String id;
+    private String value;
 
-    public int getId() {
-        return Id;
+    public String getId() {
+        return id;
     }
 
     public void setId(int id) {
-        Id = id;
+        id = id;
     }
 
     public String getValue() {
-        return Value;
+        return value;
     }
 
     public void setValue(String value) {
-        Value = value;
+        value = value;
     }
 
     public Time() {
@@ -25,6 +25,6 @@ public class Time {
 
     @Override
     public String toString() {
-        return Value;
+        return value;
     }
 }

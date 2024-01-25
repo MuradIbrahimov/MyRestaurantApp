@@ -1,34 +1,29 @@
 package com.example.myrestaurantapp.domain;
 
 public class Category {
-   private int id;
-   private String ImagePath;
+   private String id;
+   private String imagePath;
 
-    public int getId() {
-        return id;
-    }
 
-    public void setId(int id) {
-        this.id = id;
-    }
 
     public String getImagePath() {
-        return ImagePath;
+        return imagePath;
     }
 
     public void setImagePath(String imagePath) {
-        ImagePath = imagePath;
+        this.imagePath = imagePath;
     }
 
+
     public String getName() {
-        return Name;
+        return name;
     }
 
     public void setName(String name) {
-        Name = name;
+        name = name;
     }
 
-    private String Name;
+    private String name;
 
     public Category() {
     }

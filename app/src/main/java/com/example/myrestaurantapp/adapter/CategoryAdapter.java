@@ -1,79 +1,97 @@
-package com.example.myrestaurantapp.adapter;
+    package com.example.myrestaurantapp.adapter;
 
-import android.annotation.SuppressLint;
-import android.view.LayoutInflater;
-import android.view.View;
-import android.view.ViewGroup;
-import android.widget.ImageView;
-import android.widget.TextView;
+    import android.content.Context;
+    import android.view.LayoutInflater;
+    import android.view.View;
+    import android.view.ViewGroup;
+    import android.widget.ImageView;
+    import android.widget.TextView;
 
-import androidx.annotation.NonNull;
-import androidx.recyclerview.widget.RecyclerView;
+    import androidx.annotation.NonNull;
+    import androidx.recyclerview.widget.RecyclerView;
 
-import com.bumptech.glide.Glide;
-import com.example.myrestaurantapp.R;
-import com.example.myrestaurantapp.domain.Category;
+    import com.bumptech.glide.Glide;
+    import com.example.myrestaurantapp.R;
+    import com.example.myrestaurantapp.domain.Category;
 
-import java.util.ArrayList;
+    import java.util.ArrayList;
+    public class CategoryAdapter extends RecyclerView.Adapter<CategoryAdapter.ViewHolder> {
+        private ArrayList<Category> items;
+        private Context context;
 
-public class CategoryAdapter extends RecyclerView.Adapter<CategoryAdapter.ViewHolder> {
+        public CategoryAdapter(ArrayList<Category> items) {
+            this.items = items;
+        }
 
-    ArrayList<Category> categories;
+        @NonNull
+        @Override
+        public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+            context = parent.getContext();
 
-    public CategoryAdapter(ArrayList<Category> categories) {
-        this.categories = categories;
-    }
+            View itemView = LayoutInflater.from(parent.getContext()).inflate(R.layout.viewholder_category, parent, false);
+            return new ViewHolder(itemView);
+        }
 
-    @NonNull
-    @Override
-    public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View inflate = LayoutInflater.from(parent.getContext()).inflate(R.layout.viewholder_category,parent,false);
-        return new ViewHolder(inflate);
-    }
 
-    @SuppressLint("DiscouragedApi")
-    @Override
-    public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
-        String picUrl = "";
+        @Override
+        public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
+        holder.titleTxt.setText(items.get(position).getName());
+
         switch (position){
             case 0:{
-                picUrl = "cat_1";
+                holder.pic.setBackgroundResource(R.drawable.cat_0_background);
                 break;
             }
             case 1:{
-                picUrl = "cat_2";
+                holder.pic.setBackgroundResource(R.drawable.cat_1_background);
                 break;
             }
             case 2:{
-                picUrl = "cat_3";
+                holder.pic.setBackgroundResource(R.drawable.cat_2_background);
                 break;
             }
             case 3:{
-                picUrl = "cat_4";
+                holder.pic.setBackgroundResource(R.drawable.cat_3_background);
                 break;
             }
-
+            case 4:{
+                holder.pic.setBackgroundResource(R.drawable.cat_4_background);
+                break;
+            }
+            case 5:{
+                holder.pic.setBackgroundResource(R.drawable.cat_5_background);
+                break;
+            }
+            case 6:{
+                holder.pic.setBackgroundResource(R.drawable.cat_6_background);
+                break;
+            }
+            case 7:{
+                holder.pic.setBackgroundResource(R.drawable.cat_7_background);
+                break;
+            }
         }
-    int drawableResourceId;
-        drawableResourceId = holder.itemView.getContext().getResources().getIdentifier(picUrl,"drawable", holder.itemView.getContext().getPackageName());
+        int drawableResourceId = context.getResources().getIdentifier(items.get(position).getImagePath(),"drawable",holder.itemView.getContext().getPackageName());
+            Glide.with(context)
+                    .load(drawableResourceId)
+                    .into(holder.pic);
+        }
 
-        Glide.with(holder.itemView.getContext()).load(drawableResourceId).into(holder.categoryPic);
-    }
+        @Override
+        public int getItemCount() {
+            return items.size();
+        }
 
-    @Override
-    public int getItemCount() {
-        return categories.size();
-    }
- public static class ViewHolder extends RecyclerView.ViewHolder{
-TextView categoryName;
-ImageView categoryPic;
+        public class ViewHolder extends RecyclerView.ViewHolder {
+            TextView titleTxt;
+            ImageView pic;
 
-        public ViewHolder(@NonNull View itemView) {
-            super(itemView);
-            categoryName = itemView.findViewById(R.id.categoryName);
-            categoryPic = itemView.findViewById(R.id.categoryPic);
+            public ViewHolder(@NonNull View itemView) {
+                super(itemView);
+                titleTxt = itemView.findViewById(R.id.catNameTxt);
+                pic = itemView.findViewById(R.id.imgCat);
 
-
+            }
         }
     }
-}
+
