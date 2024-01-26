@@ -14,10 +14,12 @@ public class SqLite extends SQLiteOpenHelper {
         super(context, DATABASE_NAME, null, DATABASE_VERSION);
     }
 
-    @Override
-    public void onCreate(SQLiteDatabase db) {
-        db.execSQL("CREATE TABLE IF NOT EXISTS user_db (email TEXT, access_token TEXT)");
-    }
+
+        public void onCreate(SQLiteDatabase db) {
+            db.execSQL("CREATE TABLE IF NOT EXISTS user_db (email TEXT, access_token TEXT, id TEXT)");
+        }
+
+
 
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
@@ -28,12 +30,20 @@ public class SqLite extends SQLiteOpenHelper {
         }
         // Handle other version upgrades as needed
     }
-    public void insertUserDetails(String email, String id) {
+    public void insertUserDetails(String email, String access_token, String id) {
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues values = new ContentValues();
         values.put("email", email);
+        values.put("access_token", access_token);
         values.put("id", id);
         db.insert("user_db", null, values);
         db.close();
     }
+
+    public void clearUserDetails() {
+        SQLiteDatabase db = this.getWritableDatabase();
+        db.delete("user_db", null, null);
+        db.close();
+    }
+
 }

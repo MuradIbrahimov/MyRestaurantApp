@@ -1,6 +1,16 @@
 package com.example.myrestaurantapp.authentication;
 
 public class LoginResponse {
+    private String email;
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
     private String message;
     private String userId;
     private String token;

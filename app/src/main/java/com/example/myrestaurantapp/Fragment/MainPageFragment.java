@@ -15,6 +15,7 @@ import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.myrestaurantapp.adapter.AllFoodsAdapter;
 import com.example.myrestaurantapp.adapter.BestFoodsAdapter;
 import com.example.myrestaurantapp.adapter.CategoryAdapter;
 import com.example.myrestaurantapp.api.ApiInterface;
@@ -35,8 +36,10 @@ import retrofit2.Response;
 
 public class MainPageFragment extends Fragment {
 
-    private RecyclerView recyclerViewCategory, recyclerViewPopularList;
+    private RecyclerView recyclerViewCategory, recyclerViewPopularList , recyclerViewAllFoods;
     private BestFoodsAdapter bestFoodsAdapter;
+
+    private AllFoodsAdapter allFoodsAdapter;
     private CategoryAdapter categoryAdapter;
 
     private List<Category> categoryList;
@@ -72,6 +75,7 @@ public class MainPageFragment extends Fragment {
         initLocationSpinner();
         initTimeSpinner();
         initPriceSpinner();
+        initAllFoodsRecyclerView();
     }
     private void initLocationSpinner() {
         Spinner locationSpinner = binding.locationSp;
@@ -219,5 +223,32 @@ public class MainPageFragment extends Fragment {
             }
         });
     }
+    private void initAllFoodsRecyclerView() {
+        LinearLayoutManager linearLayoutManager = new LinearLayoutManager(requireContext(), LinearLayoutManager.HORIZONTAL, false);
+        recyclerViewAllFoods = binding.recyclerAllFoods;
+        recyclerViewAllFoods.setLayoutManager(linearLayoutManager);
+        ApiInterface apiInterface = RetrofitClient.getRetrofitInstance().create(ApiInterface.class);
+        Call<List<Foods>> call = apiInterface.getAllFoods();
 
+        call.enqueue(new Callback<List<Foods>>() {
+            @Override
+            public void onResponse(Call<List<Foods>> call, Response<List<Foods>> response) {
+                if (response.isSuccessful() && response.body() != null) {
+                    List<Foods> allFoodsList = response.body();
+
+                    allFoodsAdapter = new AllFoodsAdapter((ArrayList<Foods>) allFoodsList);
+                    recyclerViewAllFoods.setAdapter(allFoodsAdapter);
+                } else {
+                    // Handle the error
+                    Log.e("Retrofit", "Error: " + response.message());
+                }
+            }
+
+            @Override
+            public void onFailure(Call<List<Foods>> call, Throwable t) {
+                // Handle failure
+                Log.e("Retrofit", "Error: " + t.getMessage());
+            }
+        });
+    }
 }

@@ -31,6 +31,8 @@ public interface ApiInterface {
 
     @GET("api/foods/best-foods")
     Call<List<Foods>> getBestFoods();
+    @GET("api/foods")
+    Call<List<Foods>> getAllFoods();
 
     @GET("api/locations")
     Call<List<Location>> getLocations();

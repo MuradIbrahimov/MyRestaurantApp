@@ -74,6 +74,7 @@ public class ProfileFragment extends Fragment {
         logout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
                 signOut();
             }
         });
@@ -85,10 +86,10 @@ public class ProfileFragment extends Fragment {
         // Retrieve user data from SharedPreferences
         SharedPreferences sharedPreferences = currentActivity.getSharedPreferences("user_data", Context.MODE_PRIVATE);
         String userEmail = sharedPreferences.getString("email", "");
+        String sharedToken = sharedPreferences.getString("token", "");
         String userId = sharedPreferences.getString("id", "");
-
         // Insert user details into SQLite
-        sqliteHelper.insertUserDetails(userEmail, userId);
+        sqliteHelper.insertUserDetails(userEmail,sharedToken, userId);
 
         // Display a toast message indicating success
         Toast.makeText(getContext(), "User details written to SQLite", Toast.LENGTH_SHORT).show();
@@ -97,6 +98,10 @@ public class ProfileFragment extends Fragment {
     private void deleteUser() {
         Log.d("ProfileFragment", "userId: " + userId);
         Log.d("ProfileFragment", "userToken: " + userToken);
+
+        // Clear SQLite database
+        sqliteHelper.clearUserDetails();
+
         // Make API call to delete the user
         Call<Void> call = apiInterface.deleteUser(userId);
 
@@ -141,10 +146,18 @@ public class ProfileFragment extends Fragment {
     private void signOut() {
         if (currentActivity != null) {
             // Finish the current activity to exit the app
+            // Clear SQLite database
+            clearSharedPreferences();
+            sqliteHelper.clearUserDetails();
             currentActivity.finish();
         }
     }
-
+    private void clearSharedPreferences() {
+        SharedPreferences sharedPreferences = currentActivity.getSharedPreferences("user_data", Context.MODE_PRIVATE);
+        SharedPreferences.Editor editor = sharedPreferences.edit();
+        editor.clear();
+        editor.apply();
+    }
     // Function to retrieve user data from SharedPreferences
     private void getUserData() {
         SharedPreferences sharedPreferences = currentActivity.getSharedPreferences("user_data", Context.MODE_PRIVATE);
