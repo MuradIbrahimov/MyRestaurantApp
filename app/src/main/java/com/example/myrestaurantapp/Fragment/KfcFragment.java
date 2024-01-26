@@ -1,4 +1,4 @@
-package com.example.myrestaurantapp.ui.kfc;
+package com.example.myrestaurantapp.Fragment;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;

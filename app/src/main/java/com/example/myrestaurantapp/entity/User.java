@@ -22,7 +22,17 @@ public class User {
     @SerializedName("isGuest")
     private boolean isGuest;
 
-    // Additional user attributes, getters, and setters
+    @SerializedName("token")
+    private String token;
+
+    public String getToken() {
+        return token;
+    }
+
+    public void setToken(String token) {
+        this.token = token;
+    }
+// Additional user attributes, getters, and setters
 
     public String getId() {
         return id;

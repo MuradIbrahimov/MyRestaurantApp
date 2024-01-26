@@ -1,7 +1,10 @@
 package com.example.myrestaurantapp;
 
+import android.content.Context;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -18,11 +21,9 @@ public class MainPage extends AppCompatActivity {
 
     private AppBarConfiguration mAppBarConfiguration;
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
         ActivityMainPageBinding binding = ActivityMainPageBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
 
@@ -32,7 +33,7 @@ public class MainPage extends AppCompatActivity {
         NavigationView navigationView = binding.navView;
 
         mAppBarConfiguration = new AppBarConfiguration.Builder(
-                R.id.nav_main_page, R.id.nav_mc_donalds, R.id.nav_kfc , R.id.nav_profile)
+                R.id.nav_main_page, R.id.nav_mc_donalds, R.id.nav_kfc, R.id.nav_profile, R.id.nav_register)
                 .setOpenableLayout(drawer)
                 .build();
 
@@ -42,12 +43,27 @@ public class MainPage extends AppCompatActivity {
 
         getWindow().getDecorView().setLayoutDirection(View.LAYOUT_DIRECTION_LTR);
 
-
-
+        if (userHasAdminRole()) {
+            showAdminMenuItems(navigationView);
+        }
     }
 
+    private void showAdminMenuItems(NavigationView navigationView) {
+        Menu navMenu = navigationView.getMenu();
+        MenuItem registerItem = navMenu.findItem(R.id.nav_register);
+        if (registerItem != null) {
+            registerItem.setVisible(true);
+        }
+    }
 
+    private boolean userHasAdminRole() {
+        // Retrieve user role from SharedPreferences
+        SharedPreferences sharedPreferences = getSharedPreferences("user_data", Context.MODE_PRIVATE);
+        String userRole = sharedPreferences.getString("role", "");
 
+        // Check if the user has the admin role
+        return userRole.equals("ROLE_ADMIN");
+    }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {

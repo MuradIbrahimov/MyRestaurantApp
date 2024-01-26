@@ -1,4 +1,4 @@
-package com.example.myrestaurantapp.ui.main;
+package com.example.myrestaurantapp.Fragment;
 
 import android.os.Bundle;
 import android.util.Log;

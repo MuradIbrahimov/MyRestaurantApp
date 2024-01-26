@@ -1,6 +1,8 @@
 package com.example.myrestaurantapp;
 
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.widget.Button;
 import android.widget.Toast;
@@ -49,7 +51,9 @@ public class IntroActivity extends AppCompatActivity {
                 if (response.isSuccessful()) {
                     // Handle successful response here
                     User guestUser = response.body();
-                    // Do something with guestUser
+                    // Save guest user data to SharedPreferences
+                    saveUserData(guestUser.getToken(), guestUser.getRole());
+
                     Intent intent = new Intent(IntroActivity.this, MainPage.class);
                     startActivity(intent);
                 } else {
@@ -83,9 +87,15 @@ public class IntroActivity extends AppCompatActivity {
                 // Display error message using Toast
                 Toast.makeText(IntroActivity.this, errorMessage, Toast.LENGTH_SHORT).show();
             }
-
-
-
         });
     }
+
+    private void saveUserData(String token, String role) {
+        SharedPreferences sharedPreferences = getSharedPreferences("user_data", Context.MODE_PRIVATE);
+        SharedPreferences.Editor editor = sharedPreferences.edit();
+        editor.putString("token", token);
+        editor.putString("role", role);
+        editor.apply();
+    }
+
 }

@@ -8,23 +8,28 @@
 
     <fragment
         android:id="@+id/nav_mc_donalds"
-        android:name="com.example.myrestaurantapp.ui.mcDonalds.McDonaldsFragment"
+        android:name="com.example.myrestaurantapp.Fragment.McDonaldsFragment"
         android:label="@string/mc_donalds"
         tools:layout="@layout/fragment_mcdonalds" />
 
     <fragment
         android:id="@+id/nav_kfc"
-        android:name="com.example.myrestaurantapp.ui.kfc.KfcFragment"
+        android:name="com.example.myrestaurantapp.Fragment.KfcFragment"
         android:label="@string/kfc"
         tools:layout="@layout/fragment_kfc" />
     <fragment
         android:id="@+id/nav_profile"
-        android:name="com.example.myrestaurantapp.ui.profile.ProfileFragment"
+        android:name="com.example.myrestaurantapp.Fragment.ProfileFragment"
         android:label="@string/profile"
         tools:layout="@layout/fragment_profile" />
     <fragment
         android:id="@+id/nav_main_page"
-        android:name="com.example.myrestaurantapp.ui.main.MainPageFragment"
+        android:name="com.example.myrestaurantapp.Fragment.MainPageFragment"
         android:label="@string/main_page"
         tools:layout="@layout/fragment_main" />
+    <fragment
+        android:id="@+id/nav_register"
+        android:name="com.example.myrestaurantapp.Fragment.SignUpFragment"
+        android:label="@string/signUp"
+        tools:layout="@layout/fragment_signup" />
 </navigation>

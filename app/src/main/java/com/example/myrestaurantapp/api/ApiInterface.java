@@ -1,5 +1,7 @@
 package com.example.myrestaurantapp.api;
 
+import com.example.myrestaurantapp.authentication.LoginRequest;
+import com.example.myrestaurantapp.authentication.LoginResponse;
 import com.example.myrestaurantapp.domain.Category;
 import com.example.myrestaurantapp.domain.Foods;
 import com.example.myrestaurantapp.domain.Location;
@@ -18,8 +20,8 @@ public interface ApiInterface {
     @POST("api/register")
     Call<User> saveUser(@Body User user);
 
-    @POST("api/login")
-    Call<User> loginUser(@Body User user);
+    @POST("/api/login") // Adjust the endpoint accordingly
+    Call<LoginResponse> loginUser(@Body LoginRequest loginRequest);
 
     @POST("api/users/guest")
     Call<User> createGuestUser();

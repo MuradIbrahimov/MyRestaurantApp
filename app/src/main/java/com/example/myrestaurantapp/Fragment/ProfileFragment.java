@@ -1,4 +1,4 @@
-package com.example.myrestaurantapp.ui.profile;
+package com.example.myrestaurantapp.Fragment;
 
 import android.app.Activity;
 import android.os.Bundle;
