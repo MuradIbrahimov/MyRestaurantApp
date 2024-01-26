@@ -13,16 +13,17 @@ import java.util.List;
 
 import retrofit2.Call;
 import retrofit2.http.Body;
+import retrofit2.http.DELETE;
 import retrofit2.http.GET;
 import retrofit2.http.Header;
 import retrofit2.http.POST;
+import retrofit2.http.Path;
 
 public interface ApiInterface {
     @POST("api/users")
     Call<User> signUpUser(@Header("Authorization") String token, @Body User user);
 
-
-    @POST("/api/login") // Adjust the endpoint accordingly
+    @POST("/api/login")
     Call<LoginResponse> loginUser(@Body LoginRequest loginRequest);
 
     @POST("api/users/guest")
@@ -30,16 +31,20 @@ public interface ApiInterface {
 
     @GET("api/foods/best-foods")
     Call<List<Foods>> getBestFoods();
+
     @GET("api/locations")
     Call<List<Location>> getLocations();
 
     @GET("api/times")
     Call<List<Time>> getTime();
+
     @GET("api/prices")
     Call<List<Price>> getPrice();
 
     @GET("api/categories")
     Call<List<Category>> getCategories();
 
+    @DELETE("api/users/{id}")
+    Call<Void> deleteUser(@Path("id") String id);
 
 }

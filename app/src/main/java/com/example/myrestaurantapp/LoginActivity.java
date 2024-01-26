@@ -78,7 +78,7 @@ public class LoginActivity extends AppCompatActivity {
                     Log.d("LoginActivity", "Login successful: " + loginResponse.getMessage());
 
                     // Save user data to SharedPreferences
-                    saveUserData(loginResponse.getToken(), loginResponse.getRole());
+                    saveUserData(loginResponse.getToken(), loginResponse.getRole() , loginResponse.getUserId());
 
                     Toast.makeText(LoginActivity.this, loginResponse.getMessage(), Toast.LENGTH_SHORT).show();
 
@@ -104,11 +104,12 @@ public class LoginActivity extends AppCompatActivity {
         });
     }
 
-    private void saveUserData(String token, String role) {
+    private void saveUserData(String token, String role , String id) {
         SharedPreferences sharedPreferences = getSharedPreferences("user_data", Context.MODE_PRIVATE);
         SharedPreferences.Editor editor = sharedPreferences.edit();
         editor.putString("token", token);
         editor.putString("role", role);
+        editor.putString("id", id);
         editor.apply();
     }
 }

@@ -4,6 +4,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.util.Log;
 import android.widget.Button;
 import android.widget.Toast;
 
@@ -52,7 +53,9 @@ public class IntroActivity extends AppCompatActivity {
                     // Handle successful response here
                     User guestUser = response.body();
                     // Save guest user data to SharedPreferences
-                    saveUserData(guestUser.getToken(), guestUser.getRole());
+                    Log.d("ProfileFragment", "userId: " + guestUser.getId());
+                    Log.d("ProfileFragment", "userToken: " + guestUser.getToken());
+                    saveUserData(guestUser.getToken(), guestUser.getRole(),guestUser.getId());
 
                     Intent intent = new Intent(IntroActivity.this, MainPage.class);
                     startActivity(intent);
@@ -90,11 +93,12 @@ public class IntroActivity extends AppCompatActivity {
         });
     }
 
-    private void saveUserData(String token, String role) {
+    private void saveUserData(String token, String role , String id) {
         SharedPreferences sharedPreferences = getSharedPreferences("user_data", Context.MODE_PRIVATE);
         SharedPreferences.Editor editor = sharedPreferences.edit();
         editor.putString("token", token);
         editor.putString("role", role);
+        editor.putString("id",id);
         editor.apply();
     }
 
