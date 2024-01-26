@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.drawerlayout.widget.DrawerLayout;
@@ -50,9 +51,18 @@ public class MainPage extends AppCompatActivity {
 
     private void showAdminMenuItems(NavigationView navigationView) {
         Menu navMenu = navigationView.getMenu();
+
+        // Find the header view
+        View headerView = navigationView.getHeaderView(0);
+
+        // Find the TextView inside the header view
+        TextView headerRoleTxt = headerView.findViewById(R.id.headerRoleTxt);
+        TextView headerRoleMessage = headerView.findViewById(R.id.headerRoleMessage);
         MenuItem registerItem = navMenu.findItem(R.id.nav_register);
         if (registerItem != null) {
             registerItem.setVisible(true);
+            headerRoleTxt.setText("ADMIN");
+            headerRoleMessage.setText("Qazanmaqdan zövq al!");
         }
     }
 

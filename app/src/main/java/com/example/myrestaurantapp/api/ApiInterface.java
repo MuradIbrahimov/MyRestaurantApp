@@ -14,11 +14,13 @@ import java.util.List;
 import retrofit2.Call;
 import retrofit2.http.Body;
 import retrofit2.http.GET;
+import retrofit2.http.Header;
 import retrofit2.http.POST;
 
 public interface ApiInterface {
-    @POST("api/register")
-    Call<User> saveUser(@Body User user);
+    @POST("api/users")
+    Call<User> signUpUser(@Header("Authorization") String token, @Body User user);
+
 
     @POST("/api/login") // Adjust the endpoint accordingly
     Call<LoginResponse> loginUser(@Body LoginRequest loginRequest);

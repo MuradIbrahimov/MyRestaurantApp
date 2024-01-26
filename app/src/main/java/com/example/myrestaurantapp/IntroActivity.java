@@ -29,7 +29,7 @@ public class IntroActivity extends AppCompatActivity {
 
         apiInterface = com.example.myrestaurantapp.api.RetrofitClient.getRetrofitInstance().create(ApiInterface.class);
 
-        Button sahibkarButton = findViewById(R.id.signInBtn);
+        Button sahibkarButton = findViewById(R.id.SignUpBtn);
         Button guestButton = findViewById(R.id.buttonGuest);
 
         sahibkarButton.setOnClickListener(view -> {

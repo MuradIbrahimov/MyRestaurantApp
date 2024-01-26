@@ -39,7 +39,7 @@
         tools:layout_editor_absoluteX="0dp">
 
         <EditText
-            android:id="@+id/editTextPerson2"
+            android:id="@+id/signUpUsername"
             android:layout_width="match_parent"
             android:layout_height="50dp"
             android:layout_marginStart="32dp"
@@ -54,7 +54,7 @@
             android:paddingStart="20dp" />
 
         <EditText
-            android:id="@+id/editTextPerson3"
+            android:id="@+id/signUpEmail"
             android:layout_width="match_parent"
             android:layout_height="50dp"
             android:layout_marginStart="32dp"
@@ -69,7 +69,7 @@
             android:paddingStart="20dp" />
 
         <EditText
-            android:id="@+id/pass"
+            android:id="@+id/signUpPassword"
             android:layout_width="match_parent"
             android:layout_height="50dp"
             android:layout_marginStart="32dp"
@@ -84,7 +84,7 @@
             android:paddingStart="20dp" />
 
         <EditText
-            android:id="@+id/editTextPerson"
+            android:id="@+id/signUpRepeatPass"
             android:layout_width="match_parent"
             android:layout_height="50dp"
             android:layout_marginStart="32dp"
@@ -99,7 +99,7 @@
             android:paddingStart="20dp" />
 
         <Button
-            android:id="@+id/signInBtn"
+            android:id="@+id/SignUpBtn"
             style="@android:style/Widget.Button"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"

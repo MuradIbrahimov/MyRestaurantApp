@@ -8,7 +8,14 @@
             android:id="@+id/nav_main_page"
             android:icon="@drawable/burger"
             android:title="@string/main_page" />
-
+        <item
+            android:id="@+id/nav_mc_donalds"
+            android:icon="@drawable/mcdonald_logo"
+            android:title="@string/mc_donalds" />
+        <item
+            android:id="@+id/nav_kfc"
+            android:icon="@drawable/kfc_logo"
+            android:title="@string/kfc" />
         <item
             android:id="@+id/nav_profile"
             android:icon="@drawable/profile_icon"

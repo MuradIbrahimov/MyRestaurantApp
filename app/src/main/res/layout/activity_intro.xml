@@ -53,7 +53,7 @@
             android:textStyle="bold" />
 
         <Button
-            android:id="@+id/signInBtn"
+            android:id="@+id/SignUpBtn"
             style="@android:style/Widget.Button"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"

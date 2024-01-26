@@ -19,8 +19,12 @@ public class User {
     @SerializedName("role")
     private String role;
 
-    @SerializedName("isGuest")
-    private boolean isGuest;
+    public User(String username, String password, String email, String role) {
+        this.username = username;
+        this.password = password;
+        this.email = email;
+        this.role = role;
+    }
 
     @SerializedName("token")
     private String token;
@@ -74,11 +78,5 @@ public class User {
         this.role = role;
     }
 
-    public boolean isGuest() {
-        return isGuest;
-    }
 
-    public void setGuest(boolean guest) {
-        isGuest = guest;
-    }
 }
